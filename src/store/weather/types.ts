@@ -1,3 +1,4 @@
+// Api response types
 export type TempObj<T> = {
     [P in keyof T]: T[P]
 };
@@ -21,33 +22,48 @@ export type WeatherListObj = {
     snow: number
 };
 
-export type WeatherObj = {
-    cod: string,
+export type CityObj = {
+    geoname_id: number,
+    name: string,
+    lat: number,
+    lon: number,
+    country: number,
+    iso2: string,
+    type: string,
+    population: number
+};
+
+export type WeatherResponseObj = {
+    cod: number,
     message: string | number
-    city: {
-        geoname_id: number,
-        name: string,
-        lat: number,
-        lon: number,
-        country: number,
-        iso2: string,
-        type: string,
-        population: number
-    },
+    city: CityObj,
     cnt: number,
     list: Array<WeatherListObj>
 };
 
-export type fetchStatus = 'success' | 'pending' | 'error' | 'none';
+//===================================================
+
+export type NewWeatherDayObj = {
+    date: string,
+    dayTimestamp: number,
+    timeDayWeather: Array<WeatherListObj>
+};
+
+export type WeatherCity = Array<NewWeatherDayObj> | null;
+export type WeatherCityAndDate = Array<WeatherListObj> | null;
+export type FetchStatusType = 'success' | 'pending' | 'error' | 'none';
+export type City = CityObj | null;
 
 export enum WeatherActionTypes {
+    SET_CITY = 'SET_CITY',
     SET_CITY_WEATHER = 'SET_CITY_WEATHER',
     SET_CITY_AND_DATE_WEATHER = 'SET_CITY_AND_DATE_WEATHER',
     SET_FETCH_STATUS_WEATHER_CITY = 'SET_FETCH_STATUS_WEATHER_CITY'
 };
 
 export interface WeatherState {
-    weatherCity: WeatherObj,
-    fetchStatusWeatherCity: fetchStatus,
-    weatherCityAndDate: WeatherListObj
+    city: City,
+    weatherCity: WeatherCity,
+    fetchStatusWeatherCity: FetchStatusType,
+    weatherCityAndDate: WeatherCityAndDate
 };

@@ -3,50 +3,42 @@ import { RouteComponentProps } from 'react-router';
 import { ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Action  } from 'redux';
-import { WeatherObj, setCityAndDateWeatherInfo, setCityWeatherInfo } from '../../../store/weather';
+import { WeatherCity, setCityAndDateWeatherInfo, WeatherActionTypes } from '../../../store/weather';
 
-interface StateProps {
-    router: RouteComponentProps,
+type Date = string;
+type CityName = string;
+
+interface Props {
     weather: {
-        weatherCity: WeatherObj
+        weatherCity: WeatherCity
     },
-    setCityWeatherInfo: Function,
-    setCityAndDateWeatherInfo: Function
+    setCityAndDateWeatherInfo: (date: Date, city: CityName) => void
 };
 
-type CityNameParam = { cityName: string };
-type DateParam = { date: string };
+type CityNameParam = { cityName: CityName };
+type DateParam = { date: Date };
 
-type MyRootState = {};
-type MyExtraArg = undefined;
-type MyThunkDispatch = ThunkDispatch<MyRootState, MyExtraArg, Action>;
+type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
-const mapStateToProps = (state: StateProps) => {
+
+const mapStateToProps = (state: Props) => {
     return {
-        router: state.router,
         weather: state.weather
     };
 };
 
 const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     return {
-        setCityWeatherInfo: (query: string) => { dispatch(setCityWeatherInfo(query)) },
-        setCityAndDateWeatherInfo: (date: number) => { dispatch(setCityAndDateWeatherInfo(date)) }
+        setCityAndDateWeatherInfo: (date: Date, city: CityName) => { dispatch(setCityAndDateWeatherInfo(date, city)) }
     };
 };
 
-class DayCard extends React.Component<StateProps & RouteComponentProps<CityNameParam & DateParam>, null> {
+class DayCard extends React.Component<Props & RouteComponentProps<CityNameParam & DateParam>, null> {
 
     componentDidMount() {
-        const { cityName, date } = this.props.match.params;
+        const { date, cityName } = this.props.match.params;
 
-        if (this.props.weather.weatherCity) {
-            this.props.setCityAndDateWeatherInfo(date);
-        } else {
-            this.props.setCityWeatherInfo(cityName).then(() => {
-                this.props.setCityAndDateWeatherInfo();
-            });
-        }
+        this.props.setCityAndDateWeatherInfo(date, cityName);
     }
 
     render() {

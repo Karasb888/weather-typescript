@@ -1,28 +1,29 @@
 import * as React from 'react';
 import { RouteComponentProps, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { History } from 'history';
 
-interface StateProps {
-    router: RouteComponentProps
+interface Props {
+    router: RouteComponentProps,
+    history: History
 };
 
 interface State {
-    cityQuery: string,
-    redirect: boolean
+    cityQuery: string
 };
 
-const mapStateToProps = (state: StateProps) => {
+const mapStateToProps = (state: Props) => {
     return {
         router: state.router
     };
 };
 
-class ContactForm extends React.Component<StateProps, State> {
-    constructor(props: StateProps) {
+class ContactForm extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
 
         this.state = {
-            redirect: false,
             cityQuery: ''
         };
 
@@ -32,7 +33,8 @@ class ContactForm extends React.Component<StateProps, State> {
 
     handleSubmit(e: React.FormEvent):void {
         e.preventDefault();
-        this.setState({ redirect: true });
+        const { cityQuery } = this.state;
+        this.props.history.push(`/city/${cityQuery}`);
     }
 
     handleChange(e: React.ChangeEvent<HTMLInputElement>):void {
@@ -43,17 +45,13 @@ class ContactForm extends React.Component<StateProps, State> {
     }
 
     render() {
-        if (this.state.redirect) {
-            return <Redirect to={`/city/${this.state.cityQuery}`} />
-        } else {
-            return (
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" placeholder="Type city name..." />
-                    <button type="submit">Find</button>
-                </form>
-            );
-        }
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <input onChange={this.handleChange} type="text" placeholder="Type city name..." />
+                <button type="submit">Find</button>
+            </form>
+        );
     }
 };
 
-export default connect(mapStateToProps, null)(ContactForm);
+export default withRouter(connect(mapStateToProps, null)(ContactForm));

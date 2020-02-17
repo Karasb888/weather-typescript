@@ -5,7 +5,7 @@ import { Action  } from 'redux';
 import { setCityWeatherInfo } from '../../../store/weather';
 import { RouteComponentProps } from 'react-router-dom';
 
-interface StateProps {
+interface Props {
     setCityWeatherInfo: Function
 };
 
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     };
 };
 
-class City extends React.Component<StateProps & RouteComponentProps<CityNameParam>, null> {
+class City extends React.Component<Props & RouteComponentProps<CityNameParam>, null> {
 
     componentDidMount() {
         const cityName = this.props.match.params.cityName;

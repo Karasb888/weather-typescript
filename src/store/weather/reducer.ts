@@ -2,6 +2,7 @@ import { Reducer } from 'redux'
 import { WeatherState, WeatherActionTypes } from './types'
 
 export const initialState: WeatherState = {
+  city: null,
   weatherCity: null,
   weatherCityAndDate: null,
   fetchStatusWeatherCity: 'none'
@@ -9,6 +10,9 @@ export const initialState: WeatherState = {
 
 const reducer: Reducer<WeatherState> = (state = initialState, action) => {
   switch (action.type) {
+    case WeatherActionTypes.SET_CITY: {
+      return { ...state, city: action.payload };
+    };
     case WeatherActionTypes.SET_CITY_WEATHER: {
       return { ...state, weatherCity: action.payload };
     };
@@ -16,7 +20,7 @@ const reducer: Reducer<WeatherState> = (state = initialState, action) => {
       return { ...state, fetchStatusWeatherCity: action.payload };
     };
     case WeatherActionTypes.SET_CITY_AND_DATE_WEATHER: {
-      return { ...state, fetchStatusWeatherCityAndDate: action.payload };
+      return { ...state, weatherCityAndDate: action.payload };
     };
     default: {
       return state

@@ -6,13 +6,13 @@ import City from '../city/City/City';
 import DayCard from './../day-card/DayCard/DayCard';
 
 
-const Routes: React.SFC = () => {
+const Routes: React.FC = () => {
     return(
         <main>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route 
-                    exact path="/city/:cityName" 
+                <Route
+                    exact path="/city/:cityName"
                     component={City}
                 />
                 <Route
