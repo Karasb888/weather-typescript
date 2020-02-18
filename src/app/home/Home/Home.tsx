@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import * as fun_gif from './../../../img/fun_gif.gif';
+import * as styles from './Home.scss';
 
 const Home: React.FC = () => {
     return (
-        <div>Home page stuf <Link to="/city/London/">Go to city</Link><Link to="/city/London/2020-2-17/">Go to Date</Link></div>
+        <div className={styles.home}>
+            <img className={styles.sun} src={fun_gif} alt="Fun sun gif animation"/>
+        </div>
     );
 };
 

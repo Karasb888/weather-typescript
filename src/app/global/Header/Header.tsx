@@ -1,9 +1,10 @@
 import * as React from 'react';
-import CityForm from './CityForm';
+import CityForm from '../CityForm/CityForm';
+import * as styles from './Header.scss';
 
 const Header: React.FC = () => {
     return (
-        <header>
+        <header className={styles.header}>
             <CityForm />
         </header>
     );

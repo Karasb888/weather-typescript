@@ -3,6 +3,7 @@ import { RouteComponentProps, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
+import * as styles from './CityForm.scss';
 
 interface Props {
     router: RouteComponentProps,
@@ -47,8 +48,13 @@ class ContactForm extends React.Component<Props, State> {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} type="text" placeholder="Type city name..." />
-                <button type="submit">Find</button>
+                <input 
+                    onChange={this.handleChange} 
+                    className={styles.textfield} 
+                    type="text" 
+                    placeholder="Type city name..." 
+                />
+                <button className={styles.button} type="submit">Find</button>
             </form>
         );
     }

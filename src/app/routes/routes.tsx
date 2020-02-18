@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import 'normalize.css';
 import Home from '../home/Home/Home';
 import City from '../city/City/City';
-import DayCard from './../day-card/DayCard/DayCard';
+import DayCard from '../day-card/DayCard/DayCard';
 
 
 const Routes: React.FC = () => {

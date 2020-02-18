@@ -1,0 +1,36 @@
+.textfield {
+    background: #e8e8e8;
+    padding: 5px 10px;
+    border-radius: 11px;
+    border-style: none;
+    box-sizing: border-box;
+    line-height: 35px;
+    height: 35px;
+    color: #d7b83c;
+    font-size: 24px;
+    outline: none;
+    margin-right: 30px;
+
+    &::placeholder {
+        color: #5bacbe;
+    }
+}
+
+.button {
+    background: #e8e8e8;
+    height: 35px;
+    padding: 0 25px;
+    line-height: 35px;
+    color: #d7b83c;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background: #5bacbe;
+        color: #d76a3c;
+    }
+}

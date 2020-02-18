@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Provider } from 'react-redux'
 import { Store } from 'redux'
-import Routes from './routes';
-import Header from './Header';
 import { ConnectedRouter } from 'connected-react-router'
 import { History } from 'history'
-
-import { ApplicationState } from '../../store';
+import { ApplicationState } from '../store';
+import { Provider } from 'react-redux';
+import Routes from './routes/routes';
+import Container from './global/Container/Container';
+import Header from './global/Header/Header';
+import Footer from './global/Footer/Footer';
 
 interface AppProps {
     store: Store<ApplicationState>
@@ -16,8 +17,11 @@ interface AppProps {
 const App: React.FC<AppProps> = ({ store, history }) => (
 <Provider store={store}>
     <ConnectedRouter history={history}>
-        <Header />
-        <Routes />
+        <Container>
+            <Header />
+            <Routes />
+            <Footer />
+        </Container>
     </ConnectedRouter>
 </Provider>
 );
