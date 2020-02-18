@@ -2,7 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
-const ADDITIONAL_PATH = process.env.ADDITIONAL_PATH | '';
+const ADDITIONAL_PATH = process.env.GITHUB ? 'weather-typescript' : '';
 
 module.exports = {
     mode: NODE_ENV,
