@@ -2,18 +2,20 @@ import * as React from 'react';
 import {  ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Action  } from 'redux';
-import { setCityWeatherInfo } from '../../../store/weather';
-import { RouteComponentProps } from 'react-router-dom';
-
-interface Props {
-    setCityWeatherInfo: Function
-};
+import { setCityWeatherInfo, WeatherActionTypes } from '../../../store/weather';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 type CityNameParam = { cityName: string };
 
-type MyRootState = {};
-type MyExtraArg = undefined;
-type MyThunkDispatch = ThunkDispatch<MyRootState, MyExtraArg, Action>;
+interface Props extends RouteComponentProps<CityNameParam> {
+    setCityWeatherInfo: Function
+};
+
+interface State {
+    cityName: string | null
+};
+
+type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
 const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     return {
@@ -21,18 +23,36 @@ const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     };
 };
 
-class City extends React.Component<Props & RouteComponentProps<CityNameParam>, null> {
+class City extends React.Component<Props, State> {
+    constructor(props: Props) {
+        super(props);
 
+        this.state = {
+            cityName: null
+        };
+    }
     componentDidMount() {
+        this.handleCityRoute();
+    }
+
+    componentDidUpdate() {
+        this.handleCityRoute();
+    }
+
+    handleCityRoute() {
+        const oldCityName = this.state.cityName;
         const cityName = this.props.match.params.cityName;
-        this.props.setCityWeatherInfo(cityName);
+        if (oldCityName !== cityName) {
+            this.setState({ cityName });
+            this.props.setCityWeatherInfo(cityName);
+        }
     }
 
     render() {
         return (
-            <div>City card component</div>
+        <div>City card component========{ this.state.cityName }</div>
         );
     }
 };
 
-export default connect(null, mapDispatchToProps)(City);
+export default withRouter(connect(null, mapDispatchToProps)(City));

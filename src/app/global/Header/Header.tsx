@@ -1,12 +1,12 @@
 import * as React from 'react';
-import CityForm from '../CityForm/CityForm';
+import SearchForm from '../SearchForm/SearchForm';
 import * as styles from './Header.scss';
 
 const Header: React.FC = () => {
     return (
-        <header className={styles.header}>
-            <CityForm />
-        </header>
+        <div className={styles.header}>
+            <SearchForm />
+        </div>
     );
 };
 

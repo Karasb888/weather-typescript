@@ -17,9 +17,7 @@ interface Props {
 
 type CityNameParam = { cityName: CityName };
 type DateParam = { date: Date };
-
 type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
-
 
 const mapStateToProps = (state: Props) => {
     return {
@@ -34,7 +32,6 @@ const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
 };
 
 class DayCard extends React.Component<Props & RouteComponentProps<CityNameParam & DateParam>, null> {
-
     componentDidMount() {
         const { date, cityName } = this.props.match.params;
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { RouteComponentProps, Redirect } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
-import * as styles from './CityForm.scss';
+import * as styles from './SearchForm.scss';
 
 interface Props {
     router: RouteComponentProps,
@@ -20,7 +20,7 @@ const mapStateToProps = (state: Props) => {
     };
 };
 
-class ContactForm extends React.Component<Props, State> {
+class SearchForm extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 
@@ -48,11 +48,11 @@ class ContactForm extends React.Component<Props, State> {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input 
-                    onChange={this.handleChange} 
-                    className={styles.textfield} 
-                    type="text" 
-                    placeholder="Type city name..." 
+                <input
+                    onChange={this.handleChange}
+                    className={styles.textfield}
+                    type="text"
+                    placeholder="Type city name..."
                 />
                 <button className={styles.button} type="submit">Find</button>
             </form>
@@ -60,4 +60,4 @@ class ContactForm extends React.Component<Props, State> {
     }
 };
 
-export default withRouter(connect(mapStateToProps, null)(ContactForm));
+export default withRouter(connect(mapStateToProps, null)(SearchForm));

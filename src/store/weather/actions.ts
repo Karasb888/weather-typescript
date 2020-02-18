@@ -15,11 +15,11 @@ export const setCityWeatherInfo = (cityName: string) => {
         return axios.get(apiRequestUrl)
         .then(response => {
             const { city, daysWeather } = convertWeatherResponse(response.data);
-            dispatch({ type: WeatherActionTypes.SET_CITY, payload: city })
-            dispatch({ type: WeatherActionTypes.SET_CITY_WEATHER, payload: daysWeather })
+            dispatch({ type: WeatherActionTypes.SET_CITY, payload: city });
+            dispatch({ type: WeatherActionTypes.SET_CITY_WEATHER, payload: daysWeather });
             dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'success' });
         })
-        .catch(err => {
+        .catch(() => {
             dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'error' });
         })
     };

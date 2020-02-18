@@ -9,12 +9,12 @@ import Container from './global/Container/Container';
 import Header from './global/Header/Header';
 import Footer from './global/Footer/Footer';
 
-interface AppProps {
+interface Props {
     store: Store<ApplicationState>
     history: History
 };
 
-const App: React.FC<AppProps> = ({ store, history }) => (
+const App: React.FC<Props> = ({ store, history }) => (
 <Provider store={store}>
     <ConnectedRouter history={history}>
         <Container>

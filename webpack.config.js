@@ -2,6 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
+const ADDITIONAL_PATH = process.env.ADDITIONAL_PATH | '';
 
 module.exports = {
     mode: NODE_ENV,
@@ -14,7 +15,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist/'),
-        publicPath: '/dist/'
+        publicPath: `${ADDITIONAL_PATH}/dist/`
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -39,7 +40,7 @@ module.exports = {
                 loader: "source-map-loader"
             },
             {
-                test: /\.(scss|css)$/, 
+                test: /\.(scss|css)$/,
                 use: [
                     require.resolve('style-loader'),
                     {
@@ -48,14 +49,14 @@ module.exports = {
                             importLoaders: 2,
                             sourceMap: true,
                             modules: true,
-                            localIdentName: '[name]__[local]___[hash:base64:5]'
+                            localIdentName: '[name][hash:base64:5]'
                         },
                     },
                     require.resolve('sass-loader'),
                     {
                         loader: 'postcss-loader',
                         options: {
-                          plugins: () => [ autoprefixer ]
+                            plugins: () => [ autoprefixer ]
                         }
                     }
                 ],

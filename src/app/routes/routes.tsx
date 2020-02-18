@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import 'normalize.css';
 import Home from '../home/Home/Home';
 import City from '../city/City/City';
 import DayCard from '../day-card/DayCard/DayCard';
@@ -8,7 +7,7 @@ import DayCard from '../day-card/DayCard/DayCard';
 
 const Routes: React.FC = () => {
     return(
-        <main>
+        <div>
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route
@@ -21,7 +20,7 @@ const Routes: React.FC = () => {
                 />
                 <Route component={() => <div>404 - Not Found</div>} />
             </Switch>
-        </main>
+        </div>
     );
 };
 
