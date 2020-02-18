@@ -15,7 +15,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist/'),
-        publicPath: `${ADDITIONAL_PATH}/dist/`
+        publicPath: `/${ADDITIONAL_PATH}/dist/`
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
