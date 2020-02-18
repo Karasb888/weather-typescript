@@ -2,13 +2,17 @@ import * as React from 'react';
 import {  ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Action  } from 'redux';
-import { setCityWeatherInfo, WeatherActionTypes } from '../../../store/weather';
+import { setCityWeatherInfo, WeatherActionTypes, WeatherCity } from '../../../store/weather';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { ApplicationState } from '../../../store';
+import SmallWeatherDayCard from '../SmallWeatherDayCard/SmallWeatherDayCard';
+import * as styles from './CityWeather.scss';
 
 type CityNameParam = { cityName: string };
 
 interface Props extends RouteComponentProps<CityNameParam> {
-    setCityWeatherInfo: Function
+    setCityWeatherInfo: Function,
+    weatherCity: WeatherCity
 };
 
 interface State {
@@ -17,13 +21,19 @@ interface State {
 
 type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
+const mapStateToProps = (state: ApplicationState) => {
+    return {
+        weatherCity: state.weather.weatherCity
+    }
+};
+
 const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     return {
         setCityWeatherInfo: (query: string) => { dispatch(setCityWeatherInfo(query)) }
     };
 };
 
-class City extends React.Component<Props, State> {
+class CityWeather extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 
@@ -31,6 +41,7 @@ class City extends React.Component<Props, State> {
             cityName: null
         };
     }
+
     componentDidMount() {
         this.handleCityRoute();
     }
@@ -50,9 +61,15 @@ class City extends React.Component<Props, State> {
 
     render() {
         return (
-        <div>City card component========{ this.state.cityName }</div>
+            <div className={styles.cityWeather}>
+                { this.props.weatherCity && this.props.weatherCity.map((dayWeatherObj) => {
+                    return (
+                        <SmallWeatherDayCard key={dayWeatherObj.dayTimestamp} weather={dayWeatherObj} />
+                    );
+                }) }
+            </div>
         );
     }
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(City));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CityWeather));

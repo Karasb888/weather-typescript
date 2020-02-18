@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../home/Home/Home';
-import City from '../city/City/City';
-import DayCard from '../day-card/DayCard/DayCard';
+import CityWeather from '../city-weather/CityWeather/CityWeather';
+import DayWeather from '../day-weather/DayWeather/DayWeather';
 
 
 const Routes: React.FC = () => {
@@ -12,11 +12,11 @@ const Routes: React.FC = () => {
                 <Route exact path="/" component={Home} />
                 <Route
                     exact path="/city/:cityName"
-                    component={City}
+                    component={CityWeather}
                 />
                 <Route
                     path="/city/:cityName/:date"
-                    component={DayCard}
+                    component={DayWeather}
                 />
                 <Route component={() => <div>404 - Not Found</div>} />
             </Switch>

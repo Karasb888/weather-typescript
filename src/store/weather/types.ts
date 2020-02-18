@@ -12,6 +12,7 @@ export type WeatherListItemObj = {
 
 export type WeatherListObj = {
     dt: number,
+    dt_txt: string,
     temp: TempObj<number>,
     pressure: number,
     humidity: number,

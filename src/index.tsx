@@ -4,9 +4,9 @@ import App from './app/App';
 import configureStore from "./configureStore";
 import { createBrowserHistory } from "history";
 
-const history = createBrowserHistory({ basename: '/weather-typescript/' })
-const initialState = window.INITIAL_REDUX_STATE
-const store = configureStore(history, initialState)
+const history = createBrowserHistory();
+const initialState = window.INITIAL_REDUX_STATE;
+const store = configureStore(history, initialState);
 
 ReactDOM.render(
     <App store={store} history={history} />,

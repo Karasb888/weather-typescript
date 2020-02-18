@@ -2,7 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 const NODE_ENV = process.env.NODE_ENV;
-const ADDITIONAL_PATH = process.env.GITHUB ? 'weather-typescript' : '';
+const ADDITIONAL_PATH = process.env.GITHUB ? '/weather-typescript' : '';
 
 module.exports = {
     mode: NODE_ENV,
@@ -15,7 +15,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist/'),
-        publicPath: `/${ADDITIONAL_PATH}/dist/`
+        publicPath: `${ADDITIONAL_PATH}/dist/`
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
