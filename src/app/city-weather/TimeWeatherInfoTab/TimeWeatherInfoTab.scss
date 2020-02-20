@@ -1,0 +1,23 @@
+.weatherOption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    padding-right: 5px;
+}
+
+.optionName {
+    font-size: 15.5px;
+    font-family: 'Cooper-Hewitt';
+    font-weight: 300;
+}
+
+.optionValue {
+    font-size: 15px;
+    font-family: 'Cooper-Hewitt';
+    font-weight: 400;
+    justify-self: flex-end;
+    margin-left: auto;
+}

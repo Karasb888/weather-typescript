@@ -4,9 +4,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import App from './app/App';
 import configureStore from "./configureStore";
-import { createBrowserHistory } from "history";
+import { createHashHistory } from "history";
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 const initialState = window.INITIAL_REDUX_STATE;
 const store = configureStore(history, initialState);
 

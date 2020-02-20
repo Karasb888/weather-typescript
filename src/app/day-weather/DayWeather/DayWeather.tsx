@@ -32,7 +32,7 @@ const mapStateToProps = (state: ApplicationState) => {
 
 const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     return {
-        setCityAndDateWeatherInfo: (date: Date, city: CityName) => { dispatch(setCityAndDateWeatherInfo(date, city)) }
+        setCityAndDateWeatherInfo: (date: Date, city: CityName): void => { dispatch(setCityAndDateWeatherInfo(date, city)) }
     };
 };
 
@@ -54,7 +54,7 @@ class DayWeather extends React.Component<Props, State> {
         this.handleDateWeatherRoute();
     }
 
-    private handleDateWeatherRoute() {
+    private handleDateWeatherRoute(): void {
         const { date, cityName } = this.props.match.params;
         const oldDate = this.state.date;
         const oldCityName = this.state.cityName;

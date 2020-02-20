@@ -8,8 +8,7 @@ export interface ApplicationState {
     router: RouterState;
 };
 
-export const createRootReducer = (history: History) =>
-combineReducers({
+export const createRootReducer = (history: History) => combineReducers({
     weather: weatherReducer,
     router: connectRouter(history)
-})
+});

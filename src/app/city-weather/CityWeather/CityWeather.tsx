@@ -50,7 +50,7 @@ class CityWeather extends React.Component<Props, State> {
         this.handleCityRoute();
     }
 
-    private handleCityRoute() {
+    private handleCityRoute(): void {
         const oldCityName = this.state.cityName;
         const cityName = this.props.match.params.cityName;
         if (oldCityName !== cityName) {

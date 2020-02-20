@@ -5,7 +5,6 @@ export function convertWeatherResponse(weatherResponse: WeatherResponseObj): { d
     const city: City = Object.assign({}, weatherResponse.city);
 
     weatherResponse.list.forEach((weatherItem: WeatherListObj) => {
-        // convert weatherItem.dt to seconds
         const dateObj = new Date(weatherItem.dt * 1000);
         const month = dateObj.getUTCMonth() + 1; //months from 1-12
         const day = dateObj.getUTCDate();

@@ -1,9 +1,5 @@
 // Api response types
-export type TempObj<T> = {
-    [P in keyof T]: T[P]
-};
-
-export type WeatherListItemObj = {
+export type DayTimeWeatherObj = {
     id: number;
     main: string;
     description: string;
@@ -13,24 +9,41 @@ export type WeatherListItemObj = {
 export type WeatherListObj = {
     dt: number;
     dt_txt: string;
-    temp: TempObj<number>;
-    pressure: number;
-    humidity: number;
-    weather: Array<WeatherListItemObj>;
-    speed: number;
-    deg: number;
-    clouds: number;
-    snow: number;
+    main: {
+        temp: number;
+        feels_like: number;
+        temp_min: number;
+        temp_max: number;
+        pressure: number;
+        sea_level: number;
+        grnd_level: number;
+        humidity: number;
+        temp_kf: number;
+    };
+    weather: Array<DayTimeWeatherObj>;
+    clouds: {
+        all: number;
+    };
+    wind: {
+        speed: number;
+        deg: number;
+    };
+    sys: {
+        pod: string;
+    };
 };
 
 export type CityObj = {
-    geoname_id: number;
+    id: number;
     name: string;
-    lat: number;
-    lon: number;
-    country: number;
-    iso2: string;
-    type: string;
+    coord: {
+        lat: number;
+        lon: number;
+    };
+    country: string;
+    timezone: number;
+    sunrise: number;
+    sunset: number;
     population: number;
 };
 
@@ -41,8 +54,6 @@ export type WeatherResponseObj = {
     cnt: number;
     list: Array<WeatherListObj>;
 };
-
-//===================================================
 
 export type NewWeatherDayObj = {
     date: string;
