@@ -10,8 +10,8 @@ import Header from './global/Header/Header';
 import Footer from './global/Footer/Footer';
 
 interface Props {
-    store: Store<ApplicationState>
-    history: History
+    readonly store: Store<ApplicationState>;
+    readonly history: History;
 };
 
 const App: React.FC<Props> = ({ store, history }) => (

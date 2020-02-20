@@ -1,6 +1,6 @@
 import { WeatherListObj, WeatherCity, City, NewWeatherDayObj, WeatherResponseObj } from "./types";
 
-export function convertWeatherResponse(weatherResponse: WeatherResponseObj): { daysWeather: WeatherCity, city: City } {
+export function convertWeatherResponse(weatherResponse: WeatherResponseObj): { daysWeather: WeatherCity; city: City } {
     const newWeatherObj: { [key: string]: Array<WeatherListObj> } = {};
     const city: City = Object.assign({}, weatherResponse.city);
 
@@ -19,7 +19,7 @@ export function convertWeatherResponse(weatherResponse: WeatherResponseObj): { d
         newWeatherObj[newdate].push(weatherItem);
     });
 
-    let daysArray: WeatherCity = [];
+    const daysArray: WeatherCity = [];
     const daysObjectKeys = Object.keys(newWeatherObj);
     daysObjectKeys.forEach((key: string) => {
         const daysArrayItem: NewWeatherDayObj = {

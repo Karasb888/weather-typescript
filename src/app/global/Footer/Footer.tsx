@@ -4,7 +4,7 @@ import * as styles from './Footer.scss';
 const Footer: React.FC = () => {
     return (
         <div className={styles.footer}>
-            Weather data provided by <a href="https://openweathermap.org/" target="_blank">https://openweathermap.org/</a>
+            Weather data provided by <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">https://openweathermap.org/</a>
         </div>
     );
 };

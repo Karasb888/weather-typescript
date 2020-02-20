@@ -4,50 +4,50 @@ export type TempObj<T> = {
 };
 
 export type WeatherListItemObj = {
-    id: number,
-    main: string,
-    description: string,
-    icon: string
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
 };
 
 export type WeatherListObj = {
-    dt: number,
-    dt_txt: string,
-    temp: TempObj<number>,
-    pressure: number,
-    humidity: number,
-    weather: Array<WeatherListItemObj>,
-    speed: number,
-    deg: number,
-    clouds: number,
-    snow: number
+    dt: number;
+    dt_txt: string;
+    temp: TempObj<number>;
+    pressure: number;
+    humidity: number;
+    weather: Array<WeatherListItemObj>;
+    speed: number;
+    deg: number;
+    clouds: number;
+    snow: number;
 };
 
 export type CityObj = {
-    geoname_id: number,
-    name: string,
-    lat: number,
-    lon: number,
-    country: number,
-    iso2: string,
-    type: string,
-    population: number
+    geoname_id: number;
+    name: string;
+    lat: number;
+    lon: number;
+    country: number;
+    iso2: string;
+    type: string;
+    population: number;
 };
 
 export type WeatherResponseObj = {
-    cod: number,
-    message: string | number
-    city: CityObj,
-    cnt: number,
-    list: Array<WeatherListObj>
+    cod: number;
+    message: string | number;
+    city: CityObj;
+    cnt: number;
+    list: Array<WeatherListObj>;
 };
 
 //===================================================
 
 export type NewWeatherDayObj = {
-    date: string,
-    dayTimestamp: number,
-    timeDayWeather: Array<WeatherListObj>
+    date: string;
+    dayTimestamp: number;
+    timeDayWeather: Array<WeatherListObj>;
 };
 
 export type WeatherCity = Array<NewWeatherDayObj> | null;
@@ -63,8 +63,8 @@ export enum WeatherActionTypes {
 };
 
 export interface WeatherState {
-    city: City,
-    weatherCity: WeatherCity,
-    fetchStatusWeatherCity: FetchStatusType,
-    weatherCityAndDate: WeatherCityAndDate
+    city: City;
+    weatherCity: WeatherCity;
+    fetchStatusWeatherCity: FetchStatusType;
+    weatherCityAndDate: WeatherCityAndDate;
 };

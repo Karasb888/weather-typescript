@@ -4,8 +4,8 @@ import { History } from 'history'
 import { weatherReducer, WeatherState } from './weather';
 
 export interface ApplicationState {
-    weather: WeatherState
-    router: RouterState
+    weather: WeatherState;
+    router: RouterState;
 };
 
 export const createRootReducer = (history: History) =>

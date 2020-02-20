@@ -3,7 +3,7 @@ import { NewWeatherDayObj } from './../../../store/weather';
 import * as styles from './SmallWeatherDayCard.scss';
 
 interface Props {
-    weather: NewWeatherDayObj
+    weather: NewWeatherDayObj;
 };
 
 const SmallWeatherDayCard: React.FC<Props> = ({ weather }) => {

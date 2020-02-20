@@ -4,6 +4,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Action  } from 'redux';
 import { WeatherCity, setCityAndDateWeatherInfo, WeatherActionTypes } from '../../../store/weather';
+import { ApplicationState } from '../../../store';
 
 type Date = string;
 type CityName = string;
@@ -13,17 +14,17 @@ type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
 interface Props extends RouteComponentProps<CityNameParam & DateParam> {
     weather: {
-        weatherCity: WeatherCity
-    },
-    setCityAndDateWeatherInfo: (date: Date, city: CityName) => void
+        weatherCity: WeatherCity;
+    };
+    setCityAndDateWeatherInfo: (date: Date, city: CityName) => void;
 };
 
 interface State {
-    cityName: CityName,
-    date: Date
+    cityName: CityName;
+    date: Date;
 };
 
-const mapStateToProps = (state: Props) => {
+const mapStateToProps = (state: ApplicationState) => {
     return {
         weather: state.weather
     };
@@ -45,15 +46,15 @@ class DayWeather extends React.Component<Props, State> {
         };
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         this.handleDateWeatherRoute();
     }
 
-    componentDidUpdate() {
+    public componentDidUpdate() {
         this.handleDateWeatherRoute();
     }
 
-    handleDateWeatherRoute() {
+    private handleDateWeatherRoute() {
         const { date, cityName } = this.props.match.params;
         const oldDate = this.state.date;
         const oldCityName = this.state.cityName;
@@ -64,7 +65,7 @@ class DayWeather extends React.Component<Props, State> {
         }
     }
 
-    render() {
+    public render() {
         return (
             <div>Day card component</div>
         );

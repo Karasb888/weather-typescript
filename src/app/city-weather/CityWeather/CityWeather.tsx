@@ -11,12 +11,12 @@ import * as styles from './CityWeather.scss';
 type CityNameParam = { cityName: string };
 
 interface Props extends RouteComponentProps<CityNameParam> {
-    setCityWeatherInfo: Function,
-    weatherCity: WeatherCity
+    setCityWeatherInfo: Function;
+    weatherCity: WeatherCity;
 };
 
 interface State {
-    cityName: string | null
+    cityName: string | null;
 };
 
 type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
@@ -42,15 +42,15 @@ class CityWeather extends React.Component<Props, State> {
         };
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         this.handleCityRoute();
     }
 
-    componentDidUpdate() {
+    public componentDidUpdate() {
         this.handleCityRoute();
     }
 
-    handleCityRoute() {
+    private handleCityRoute() {
         const oldCityName = this.state.cityName;
         const cityName = this.props.match.params.cityName;
         if (oldCityName !== cityName) {
@@ -59,7 +59,7 @@ class CityWeather extends React.Component<Props, State> {
         }
     }
 
-    render() {
+    public render() {
         return (
             <div className={styles.cityWeather}>
                 { this.props.weatherCity && this.props.weatherCity.map((dayWeatherObj) => {
