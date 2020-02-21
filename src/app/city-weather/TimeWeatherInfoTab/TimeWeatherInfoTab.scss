@@ -1,23 +1,28 @@
 .weatherOption {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
 }
 
 .icon {
     padding-right: 5px;
+    position: relative;
+    bottom: -7px;
 }
 
 .optionName {
-    font-size: 15.5px;
+    font-size: 13.5px;
     font-family: 'Cooper-Hewitt';
     font-weight: 300;
 }
 
 .optionValue {
-    font-size: 15px;
+    font-size: 12px;
     font-family: 'Cooper-Hewitt';
     font-weight: 400;
     justify-self: flex-end;
     margin-left: auto;
+}
+.celsius {
+    font-size: 15px;
 }

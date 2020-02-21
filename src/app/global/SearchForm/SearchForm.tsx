@@ -52,7 +52,7 @@ class SearchForm extends React.Component<Props, State> {
                     onChange={this.handleChange}
                     className={styles.textfield}
                     type="text"
-                    placeholder="Type city name..."
+                    placeholder="City (e.g. London)"
                 />
                 <button className={styles.button} type="submit">Find</button>
             </form>

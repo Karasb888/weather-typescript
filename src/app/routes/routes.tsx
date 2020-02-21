@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Home from '../home/Home/Home';
 import CityWeather from '../city-weather/CityWeather/CityWeather';
 import DayWeather from '../day-weather/DayWeather/DayWeather';
-
+import Error from '../global/Error/Error';
 
 const Routes: React.FC = () => {
     return(
@@ -18,7 +18,7 @@ const Routes: React.FC = () => {
                     path="/city/:cityName/:date"
                     component={DayWeather}
                 />
-                <Route component={() => <div>404 - Not Found</div>} />
+                <Route component={() => <Error errorText="404 - Oh dear, this link isn't working." />} />
             </Switch>
         </div>
     );

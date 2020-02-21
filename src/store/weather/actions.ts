@@ -9,7 +9,7 @@ type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
 export const setCityWeatherInfo = (cityName: string) => {
     return (dispatch: Dispatch) => {
-        const apiRequestUrl = `${apiEndPoint}?q=${cityName}&appid=${apiAppKey}`;
+        const apiRequestUrl = `${apiEndPoint}?q=${cityName}&appid=${apiAppKey}&units=metric `;
         dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'pending' });
 
         return axios.get(apiRequestUrl)

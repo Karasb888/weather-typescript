@@ -2,17 +2,20 @@ import * as React from 'react';
 import {  ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Action  } from 'redux';
-import { setCityWeatherInfo, WeatherActionTypes, WeatherCity } from '../../../store/weather';
+import { setCityWeatherInfo, WeatherActionTypes, WeatherCity, FetchStatusType } from '../../../store/weather';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { ApplicationState } from '../../../store';
 import SmallWeatherDayCard from '../SmallWeatherDayCard/SmallWeatherDayCard';
 import * as styles from './CityWeather.scss';
+import { WindMillLoading } from 'react-loadingg';
+import Error from '../../global/Error/Error';
 
 type CityNameParam = { cityName: string };
 
 interface Props extends RouteComponentProps<CityNameParam> {
     setCityWeatherInfo: Function;
     weatherCity: WeatherCity;
+    fetchStatusWeatherCity: FetchStatusType;
 };
 
 interface State {
@@ -23,7 +26,8 @@ type MyThunkDispatch = ThunkDispatch<{}, void, Action<WeatherActionTypes>>;
 
 const mapStateToProps = (state: ApplicationState) => {
     return {
-        weatherCity: state.weather.weatherCity
+        weatherCity: state.weather.weatherCity,
+        fetchStatusWeatherCity: state.weather.fetchStatusWeatherCity
     }
 };
 
@@ -60,15 +64,29 @@ class CityWeather extends React.Component<Props, State> {
     }
 
     public render() {
-        return (
-            <div className={styles.cityWeather}>
-                { this.props.weatherCity && this.props.weatherCity.map((dayWeatherObj) => {
-                    return (
-                        <SmallWeatherDayCard key={dayWeatherObj.dayTimestamp} weather={dayWeatherObj} />
-                    );
-                }) }
-            </div>
-        );
+        switch(this.props.fetchStatusWeatherCity) {
+            case('success'):
+                return (
+                    <div className={styles.cityWeatherContainer}>
+                        <div className={styles.cityTitle}>Week weather forecast for {this.state.cityName}</div>
+                        <div className={styles.cityWeather}>
+                            { this.props.weatherCity && this.props.weatherCity.map((dayWeatherObj) => {
+                                return (
+                                    <SmallWeatherDayCard key={dayWeatherObj.dayTimestamp} weather={dayWeatherObj} />
+                                );
+                            }) }
+                        </div>
+                    </div>
+                );
+            case('error'):
+                return (
+                    <Error errorText={`Cant find weather forecast for ${this.props.match.params.cityName}`} />
+                );
+            default:
+                return (
+                    <WindMillLoading />
+                );
+        }
     }
 };
 

@@ -25,7 +25,7 @@ const TimeWeatherInfoTab: React.FC<Props> = ({ timeWeather }) => {
                     viewBox="0 0 64 64"
                 />
                 <div className={styles.optionName}>Temperture:</div>
-                <div className={styles.optionValue}>{timeWeather.main.temp}</div>
+                <div className={styles.optionValue}>{timeWeather.main.temp}<span className={styles.celsius}>&#8451;</span></div>
             </div>
             <div className={styles.weatherOption}>
                 <TempFeelsIcon
@@ -33,7 +33,7 @@ const TimeWeatherInfoTab: React.FC<Props> = ({ timeWeather }) => {
                     viewBox="0 0 64 64"
                 />
                 <div className={styles.optionName}>Feels temperture:</div>
-                <div className={styles.optionValue}>{timeWeather.main.feels_like}</div>
+                <div className={styles.optionValue}>{timeWeather.main.feels_like}<span className={styles.celsius}>&#8451;</span></div>
             </div>
             <div className={styles.weatherOption}>
                 <CloudsIcon
@@ -41,15 +41,15 @@ const TimeWeatherInfoTab: React.FC<Props> = ({ timeWeather }) => {
                     viewBox="0 -87 463.83425 463"
                 />
                 <div className={styles.optionName}>Clouds:</div>
-                <div className={styles.optionValue}>{timeWeather.clouds.all}</div>
+                <div className={styles.optionValue}>{timeWeather.clouds.all}%</div>
             </div>
             <div className={styles.weatherOption}>
                 <WindIcon
                     {...iconsProps}
                     viewBox="0 0 512 512"
                 />
-                <div className={styles.optionName}>Wind speed/degree:</div>
-                <div className={styles.optionValue}>{timeWeather.wind.speed} / {timeWeather.wind.deg}</div>
+                <div className={styles.optionName}>Wind:</div>
+                <div className={styles.optionValue}>{timeWeather.wind.speed}m/s {timeWeather.wind.deg}deg</div>
             </div>
         </div>
     );
