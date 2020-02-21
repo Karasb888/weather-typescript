@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 19%;
+    overflow: hidden;
     padding: 10px;
     box-sizing: border-box;
     background: #3bc7be96;
@@ -45,6 +46,7 @@
 
 .activeTabButton {
     background: #13b0d4;
+    cursor: auto;
 }
 
 .tabButton:not(:last-child) {

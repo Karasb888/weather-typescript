@@ -20,7 +20,6 @@ class SmallWeatherDayCard extends React.Component<Props, State> {
             (min: number, character: WeatherListObj) => (character.dt < min ? character.dt : min),
             timeDayWeather[0].dt
         );
-
         this.state = {
             activeTab: minTime
         };
