@@ -82,7 +82,7 @@ class CityWeather extends React.Component<Props, State> {
                 return (
                     <Error errorText={`Cant find weather forecast for ${this.props.match.params.cityName}`} />
                 );
-            default:
+            case('pending'):
                 return (
                     <WindMillLoading />
                 );
