@@ -62,14 +62,12 @@ export type NewWeatherDayObj = {
 };
 
 export type WeatherCity = Array<NewWeatherDayObj> | null;
-export type WeatherCityAndDate = Array<WeatherListObj> | null;
 export type FetchStatusType = 'success' | 'pending' | 'error' | 'none';
 export type City = CityObj | null;
 
 export enum WeatherActionTypes {
     SET_CITY = 'SET_CITY',
     SET_CITY_WEATHER = 'SET_CITY_WEATHER',
-    SET_CITY_AND_DATE_WEATHER = 'SET_CITY_AND_DATE_WEATHER',
     SET_FETCH_STATUS_WEATHER_CITY = 'SET_FETCH_STATUS_WEATHER_CITY'
 };
 
@@ -77,5 +75,4 @@ export interface WeatherState {
     city: City;
     weatherCity: WeatherCity;
     fetchStatusWeatherCity: FetchStatusType;
-    weatherCityAndDate: WeatherCityAndDate;
 };

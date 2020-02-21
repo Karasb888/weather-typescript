@@ -35,11 +35,14 @@ class SearchForm extends React.Component<Props, State> {
     private handleSubmit(e: React.FormEvent): void {
         e.preventDefault();
         const { cityQuery } = this.state;
-        this.props.history.push(`/city/${cityQuery}`);
+        if (cityQuery) {
+            this.props.history.push(`/city/${cityQuery}`);            
+        }
     }
 
     private handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
-        const value = e.target.value;
+        let value = e.target.value;
+        value = value.trim();
         this.setState({
             cityQuery: value
         });
