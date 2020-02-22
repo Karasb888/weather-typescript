@@ -1,10 +1,10 @@
 import { WeatherState } from "../src/store/weather";
 
-type MockStore = {
+export type MockStore = {
     weather: WeatherState
 };
 
-export const mockedStore: MockStore = {
+export const mockedStoreKyiv: MockStore = {
     weather: {
         city: {
             id: 703448,

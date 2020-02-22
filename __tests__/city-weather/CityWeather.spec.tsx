@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import WithRouteCityWeather, { CityWeather, ConnectedCityWeather, Props } from '../../src/app/city-weather/CityWeather/CityWeather';
+import WithRouteCityWeather, { ConnectedCityWeather, CityWeather } from '../../src/app/city-weather/CityWeather/CityWeather';
 import { mount } from 'enzyme';
-import * as renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import { routerMiddleware } from 'connected-react-router';
-import { createMemoryHistory, createLocation } from 'history';
-import { match } from 'react-router';
+import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { mockedStore } from '../mockedStore.data';
+import { mockedStoreKyiv } from '../mockedStoreKyiv.data';
 import { FetchStatusType } from '../../src/store/weather';
 
 let store: any;
@@ -17,7 +15,7 @@ let store: any;
 const history = createMemoryHistory();
 const initialState = {
     setCityWeatherInfo: jest.fn(),
-    ...mockedStore
+    ...mockedStoreKyiv
 };
 const middlewares = [routerMiddleware(history), thunk]
 const mockStore = configureStore(middlewares);
@@ -33,12 +31,12 @@ describe('++++ <CityWeather /> ++++', () => {
             store = mockStore(initialState);
             const component = mount(
                 <Provider store={store}>
-                    <MemoryRouter initialEntries={['/city/Kiev']} keyLength={0}>
+                    <MemoryRouter initialEntries={['/city/Kyiv']} keyLength={0}>
                         <Route exact component={WithRouteCityWeather} path={path} />
                     </MemoryRouter>
                 </Provider>
-              );
+              ).find(WithRouteCityWeather);
             expect(component).toMatchSnapshot();
         });
-    })
+    });
 });
