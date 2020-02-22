@@ -28,6 +28,12 @@ export type WeatherListObj = {
         speed: number;
         deg: number;
     };
+    rain?: {
+        '3h': number
+    };
+    snow?: {
+        '3h': number
+    };
     sys: {
         pod: string;
     };

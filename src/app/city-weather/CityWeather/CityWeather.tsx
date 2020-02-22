@@ -12,7 +12,7 @@ import Error from '../../global/Error/Error';
 
 type CityNameParam = { cityName: string };
 
-interface Props extends RouteComponentProps<CityNameParam> {
+export interface Props extends RouteComponentProps<CityNameParam> {
     setCityWeatherInfo: Function;
     weatherCity: WeatherCity;
     fetchStatusWeatherCity: FetchStatusType;
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch: MyThunkDispatch) => {
     };
 };
 
-class CityWeather extends React.Component<Props, State> {
+export class CityWeather extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 
@@ -90,4 +90,5 @@ class CityWeather extends React.Component<Props, State> {
     }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CityWeather));
+export const ConnectedCityWeather = connect(mapStateToProps, mapDispatchToProps)(CityWeather);
+export default withRouter(ConnectedCityWeather);

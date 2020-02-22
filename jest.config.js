@@ -1,6 +1,6 @@
 // const { defaults } = require('jest-config');
 module.exports = {
-    moduleFileExtensions: ['js', 'tsx', 'tsx', 'json'],
+    moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
     setupFiles: ['<rootDir>/test-setup.js'],
     setupFilesAfterEnv: ['jest-extended'],
     snapshotSerializers: ['enzyme-to-json/serializer'],
