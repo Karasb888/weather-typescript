@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
@@ -20,7 +19,7 @@ const mapStateToProps = (state: ApplicationState) => {
     };
 };
 
-class SearchForm extends React.Component<Props, State> {
+export class SearchForm extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 1`] = `
+exports[`++++ <TimeWeatherInfoTab /> ++++ Renders correctly with different props 1`] = `
 <div>
   <div
     className="weatherOption"
@@ -99,7 +99,7 @@ exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 
 </div>
 `;
 
-exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 2`] = `
+exports[`++++ <TimeWeatherInfoTab /> ++++ Renders correctly with different props 2`] = `
 <div>
   <div
     className="weatherOption"
@@ -198,7 +198,7 @@ exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 
 </div>
 `;
 
-exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 3`] = `
+exports[`++++ <TimeWeatherInfoTab /> ++++ Renders correctly with different props 3`] = `
 <div>
   <div
     className="weatherOption"
@@ -297,7 +297,7 @@ exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 
 </div>
 `;
 
-exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 4`] = `
+exports[`++++ <TimeWeatherInfoTab /> ++++ Renders correctly with different props 4`] = `
 <div>
   <div
     className="weatherOption"

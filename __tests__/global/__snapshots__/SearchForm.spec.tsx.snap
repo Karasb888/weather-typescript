@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`++++ <SearchForm /> ++++ Renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    className="textfield"
+    onChange={[Function]}
+    placeholder="City (e.g. London)"
+    type="text"
+  />
+  <button
+    className="button"
+    type="submit"
+  >
+    Find
+  </button>
+</form>
+`;

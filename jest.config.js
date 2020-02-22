@@ -11,7 +11,7 @@ module.exports = {
     },
     transform: {
         '^.+\\.(ts|tsx|js)$': '<rootDir>/test-compiler.js',
-        '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub'
+        '.+\\.(css|styl|less|sass|scss|png|jpg|gif|ttf|woff|woff2)$': 'jest-transform-stub'
     },
     transformIgnorePatterns: ['<rootDir>/node_modules/']
 };

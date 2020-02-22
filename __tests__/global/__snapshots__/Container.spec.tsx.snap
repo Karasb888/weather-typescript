@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`++++ <Container /> ++++ Renders correctly with child component 1`] = `
+<div
+  className="container"
+>
+  <MockedChild />
+</div>
+`;
+
+exports[`++++ <Container /> ++++ Renders correctly without child component 1`] = `
+<div
+  className="container"
+/>
+`;

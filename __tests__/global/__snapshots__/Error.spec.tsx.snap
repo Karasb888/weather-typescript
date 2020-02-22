@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`++++ <Error /> ++++ Renders correctly with different props 1`] = `
+<div
+  className="errorContainer"
+>
+  <div
+    className="errorIcon"
+  >
+    <ErrorIcon
+      height="70"
+      svgClass="error-icon"
+      viewBox="0 0 512 512"
+      width="70"
+    />
+  </div>
+  <div
+    className="errorText"
+  >
+    First example text
+  </div>
+</div>
+`;
+
+exports[`++++ <Error /> ++++ Renders correctly with different props 2`] = `
+<div
+  className="errorContainer"
+>
+  <div
+    className="errorIcon"
+  >
+    <ErrorIcon
+      height="70"
+      svgClass="error-icon"
+      viewBox="0 0 512 512"
+      width="70"
+    />
+  </div>
+  <div
+    className="errorText"
+  >
+    Second example text
+  </div>
+</div>
+`;

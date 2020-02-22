@@ -5,7 +5,8 @@ import TimeWeatherInfoTab from '../../src/app/city-weather/TimeWeatherInfoTab/Ti
 
 describe('++++ <TimeWeatherInfoTab /> ++++', () => {
     mockedStoreKyiv.weather.weatherCity[0].timeDayWeather.forEach((timeWeather) => {
-        const wrapper = shallow(<TimeWeatherInfoTab {{ timeWeather }} />);
+        const props = { timeWeather };
+        const wrapper = shallow(<TimeWeatherInfoTab {...props} />);
 
         it('Renders correctly with different props', () => {
             expect(wrapper).toMatchSnapshot();
