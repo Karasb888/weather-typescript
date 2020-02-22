@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 1`] = `
+<div>
+  <div
+    className="weatherOption"
+  >
+    <TempIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      8.8
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <TempFeelsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Feels temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      4.86
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <CloudsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 -87 463.83425 463"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Clouds:
+    </div>
+    <div
+      className="optionValue"
+    >
+      53
+      %
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <WindIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 512 512"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Wind:
+    </div>
+    <div
+      className="optionValue"
+    >
+      3
+      m/s 
+      217
+      deg
+    </div>
+  </div>
+</div>
+`;
+
+exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 2`] = `
+<div>
+  <div
+    className="weatherOption"
+  >
+    <TempIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      7.24
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <TempFeelsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Feels temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      2.49
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <CloudsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 -87 463.83425 463"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Clouds:
+    </div>
+    <div
+      className="optionValue"
+    >
+      99
+      %
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <WindIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 512 512"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Wind:
+    </div>
+    <div
+      className="optionValue"
+    >
+      4.05
+      m/s 
+      224
+      deg
+    </div>
+  </div>
+</div>
+`;
+
+exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 3`] = `
+<div>
+  <div
+    className="weatherOption"
+  >
+    <TempIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      5.26
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <TempFeelsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Feels temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      0.2
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <CloudsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 -87 463.83425 463"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Clouds:
+    </div>
+    <div
+      className="optionValue"
+    >
+      97
+      %
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <WindIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 512 512"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Wind:
+    </div>
+    <div
+      className="optionValue"
+    >
+      4.32
+      m/s 
+      201
+      deg
+    </div>
+  </div>
+</div>
+`;
+
+exports[`++++ <SmallWeatherDayCard /> ++++ Renders correctly for different tabs 4`] = `
+<div>
+  <div
+    className="weatherOption"
+  >
+    <TempIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      4.22
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <TempFeelsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 64 64"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Feels temperture:
+    </div>
+    <div
+      className="optionValue"
+    >
+      -1.76
+      <span
+        className="celsius"
+      >
+        ℃
+      </span>
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <CloudsIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 -87 463.83425 463"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Clouds:
+    </div>
+    <div
+      className="optionValue"
+    >
+      100
+      %
+    </div>
+  </div>
+  <div
+    className="weatherOption"
+  >
+    <WindIcon
+      height="25"
+      svgClass="icon"
+      viewBox="0 0 512 512"
+      width="25"
+    />
+    <div
+      className="optionName"
+    >
+      Wind:
+    </div>
+    <div
+      className="optionValue"
+    >
+      5.48
+      m/s 
+      212
+      deg
+    </div>
+  </div>
+</div>
+`;
