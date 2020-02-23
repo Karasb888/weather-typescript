@@ -3,3 +3,19 @@
     justify-content: center;
     padding: 25px 0;
 }
+
+.homeBtn {
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-transform: uppercase;
+    font-family: 'Cooper-Hewitt';
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #157571;
+    &:hover {
+        text-decoration: underline;
+    }
+}

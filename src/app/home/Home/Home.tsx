@@ -1,11 +1,11 @@
 import * as React from 'react';
-import * as funGif from './../../../img/fun_gif.gif';
 import * as styles from './Home.scss';
+import FavoriteCitiesList from '../FavoriteCitiesList/FavoriteCitiesList';
 
 const Home: React.FC = () => {
     return (
         <div className={styles.home}>
-            <img className={styles.sun} src={funGif} alt="Fun sun gif animation"/>
+            <FavoriteCitiesList />
         </div>
     );
 };

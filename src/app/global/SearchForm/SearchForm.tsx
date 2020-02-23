@@ -13,13 +13,15 @@ interface State {
     cityQuery: string;
 };
 
-const mapStateToProps = (state: ApplicationState) => {
-    return {
-        router: state.router
-    };
-};
+// const mapStateToProps = (state: ApplicationState) => {
+//     return {
+//         // router: state.router
+//     };
+// };
 
 export class SearchForm extends React.Component<Props, State> {
+    private input = React.createRef<HTMLInputElement>();
+
     constructor(props: Props) {
         super(props);
 
@@ -35,6 +37,7 @@ export class SearchForm extends React.Component<Props, State> {
         e.preventDefault();
         const { cityQuery } = this.state;
         if (cityQuery) {
+            this.input.current.value = '';
             this.props.history.push(`/city/${cityQuery}`);            
         }
     }
@@ -53,6 +56,7 @@ export class SearchForm extends React.Component<Props, State> {
                 <input
                     onChange={this.handleChange}
                     className={styles.textfield}
+                    ref={this.input}
                     type="text"
                     placeholder="City (e.g. London)"
                 />
@@ -62,4 +66,4 @@ export class SearchForm extends React.Component<Props, State> {
     }
 };
 
-export default withRouter(connect(mapStateToProps, null)(SearchForm));
+export default withRouter(connect(null, null)(SearchForm));

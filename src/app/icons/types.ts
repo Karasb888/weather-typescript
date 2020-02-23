@@ -3,4 +3,5 @@ export interface IconsProps {
     height: string;
     viewBox: string;
     svgClass: string;
+    title?: string;
 };
