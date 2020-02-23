@@ -30,6 +30,11 @@ const mapDispatchToProps = (dispatch: MyThunkDispatch ) => {
 };
 
 const FavoriteCitiesList: React.FC<Props> = ({ citiesList, removeFavoriteCity, history }) => {
+    const removeCityHandler = (event: React.MouseEvent<HTMLSpanElement>, id: number) => {
+        event.stopPropagation();
+        removeFavoriteCity(id);
+    };
+
     return (
         <div className={styles.citiesList}>
             {
@@ -38,15 +43,15 @@ const FavoriteCitiesList: React.FC<Props> = ({ citiesList, removeFavoriteCity, h
                             <div 
                                 className={styles.citiesListItem}
                                 key={city.id}
-                                onClick={() => { history.push(`/city/${city.name}`) }}
+                                onClick={(e) => { history.push(`/city/${city.name}`)}}
                             >
                                 { city.name }
-                                <span onClick={() => { removeFavoriteCity(city.id) }}>
+                                <span onClick={(e) => { removeCityHandler(e, city.id) }}>
                                     <RemoveIcon
                                         svgClass={styles.removeIcon}
                                         title="Remove from favorite cities list"
-                                        width="12"
-                                        height="12"
+                                        width="13"
+                                        height="13"
                                         viewBox="0 0 512 512"
                                     />
                                 </span>
