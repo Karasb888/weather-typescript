@@ -29,10 +29,10 @@ export type WeatherListObj = {
         deg: number;
     };
     rain?: {
-        '3h': number
+        '3h': number;
     };
     snow?: {
-        '3h': number
+        '3h': number;
     };
     sys: {
         pod: string;

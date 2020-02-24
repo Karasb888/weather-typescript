@@ -4,17 +4,38 @@ exports[`++++ <SearchForm /> ++++ Renders correctly 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <input
-    className="textfield"
-    onChange={[Function]}
-    placeholder="City (e.g. London)"
-    type="text"
-  />
-  <button
-    className="button"
-    type="submit"
+  <WithStyles(ForwardRef(Grid))
+    alignItems="center"
+    container={true}
+    spacing={3}
   >
-    Find
-  </button>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={9}
+    >
+      <WithStyles(ForwardRef(TextField))
+        fullWidth={true}
+        inputRef={
+          Object {
+            "current": null,
+          }
+        }
+        label="Find weather forecast"
+        onChange={[Function]}
+        placeholder="Type city/country name...(e.g. London)"
+      />
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={3}
+    >
+      <WithStyles(ForwardRef(Button))
+        color="secondary"
+        variant="outlined"
+      >
+        Find
+      </WithStyles(ForwardRef(Button))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
 </form>
 `;

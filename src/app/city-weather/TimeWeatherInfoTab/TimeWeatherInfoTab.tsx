@@ -5,6 +5,7 @@ import TempFeelsIcon from '../../icons/TempFeelsIcon';
 import CloudsIcon from '../../icons/CloudsIcon';
 import WindIcon from '../../icons/WindIcon';
 import * as styles from './TimeWeatherInfoTab.scss';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 
 interface Props {
     timeWeather: WeatherListObj;
@@ -18,40 +19,24 @@ const iconsProps = {
 
 const TimeWeatherInfoTab: React.FC<Props> = ({ timeWeather }) => {
     return (
-        <div>
-            <div className={styles.weatherOption}>
-                <TempIcon
-                    {...iconsProps}
-                    viewBox="0 0 64 64"
-                />
-                <div className={styles.optionName}>Temperture:</div>
-                <div className={styles.optionValue}>{timeWeather.main.temp}<span className={styles.celsius}>&#8451;</span></div>
-            </div>
-            <div className={styles.weatherOption}>
-                <TempFeelsIcon
-                    {...iconsProps}
-                    viewBox="0 0 64 64"
-                />
-                <div className={styles.optionName}>Feels temperture:</div>
-                <div className={styles.optionValue}>{timeWeather.main.feels_like}<span className={styles.celsius}>&#8451;</span></div>
-            </div>
-            <div className={styles.weatherOption}>
-                <CloudsIcon
-                    {...iconsProps}
-                    viewBox="0 -87 463.83425 463"
-                />
-                <div className={styles.optionName}>Clouds:</div>
-                <div className={styles.optionValue}>{timeWeather.clouds.all}%</div>
-            </div>
-            <div className={styles.weatherOption}>
-                <WindIcon
-                    {...iconsProps}
-                    viewBox="0 0 512 512"
-                />
-                <div className={styles.optionName}>Wind:</div>
-                <div className={styles.optionValue}>{timeWeather.wind.speed}m/s {timeWeather.wind.deg}deg</div>
-            </div>
-        </div>
+        <List>
+            <ListItem alignItems="center">
+                <TempIcon {...iconsProps} viewBox="0 0 64 64" />
+                <ListItemText primary="Temperture: " secondary={`${timeWeather.main.temp}℃`}/>
+            </ListItem>
+            <ListItem alignItems="center">
+                <TempFeelsIcon {...iconsProps} viewBox="0 0 64 64" />
+                <ListItemText primary="Feels temperture: " secondary={`${timeWeather.main.feels_like}℃`}/>
+            </ListItem>
+            <ListItem alignItems="center">
+                <CloudsIcon {...iconsProps} viewBox="0 -87 463.83425 463" />
+                <ListItemText primary="Clouds: " secondary={`${timeWeather.clouds.all}%`}/>
+            </ListItem>
+            <ListItem alignItems="center">
+                <WindIcon {...iconsProps} viewBox="0 0 512 512" />
+                <ListItemText primary="Wind: " secondary={`${timeWeather.wind.speed}m/s ${timeWeather.wind.deg}deg`}/>
+            </ListItem>
+        </List>
     );
 };
 

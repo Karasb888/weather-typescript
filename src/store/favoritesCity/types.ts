@@ -1,10 +1,10 @@
 export type FavoriteCityObj = {
-    id: number,
-    name: string
+    id: number;
+    name: string;
 };
 
 export interface FavoriteCityState {
-    citiesList: Array<FavoriteCityObj>
+    citiesList: Array<FavoriteCityObj>;
 };
 
 export enum FavoritesCityActionTypes {

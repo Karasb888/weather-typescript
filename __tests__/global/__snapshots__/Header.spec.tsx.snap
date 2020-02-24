@@ -2,15 +2,47 @@
 
 exports[`++++ <Header /> ++++ Renders correctly 1`] = `
 <div
-  className="footer"
+  className="header"
 >
-  Weather data provided by 
-  <a
-    href="https://openweathermap.org/"
-    rel="noopener noreferrer"
-    target="_blank"
+  <WithStyles(ForwardRef(Grid))
+    alignItems="center"
+    container={true}
+    justify="flex-start"
+    spacing={1}
   >
-    https://openweathermap.org/
-  </a>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={1}
+    >
+      <WithStyles(ForwardRef(Link))
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        to="/"
+      >
+        <HomeIcon
+          color="primary"
+          fontSize="large"
+        />
+      </WithStyles(ForwardRef(Link))>
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <withRouter(Connect(SearchForm)) />
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
 </div>
 `;

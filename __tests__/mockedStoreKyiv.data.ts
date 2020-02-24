@@ -1,10 +1,15 @@
 import { WeatherState } from "../src/store/weather";
+import { FavoriteCityState } from "../src/store/favoritesCity";
 
 export type MockStore = {
-    weather: WeatherState
-};
+    weather: WeatherState;
+    favoriteCities: FavoriteCityState;
+}
 
 export const mockedStoreKyiv: MockStore = {
+    favoriteCities: {
+        citiesList: []
+    },
     weather: {
         city: {
             id: 703448,

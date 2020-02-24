@@ -2,8 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { History } from 'history';
-import * as styles from './SearchForm.scss';
-import { ApplicationState } from '../../../store';
+import { Button, Grid, TextField } from '@material-ui/core';
 
 interface Props {
     history: History;
@@ -12,12 +11,6 @@ interface Props {
 interface State {
     cityQuery: string;
 };
-
-// const mapStateToProps = (state: ApplicationState) => {
-//     return {
-//         // router: state.router
-//     };
-// };
 
 export class SearchForm extends React.Component<Props, State> {
     private input = React.createRef<HTMLInputElement>();
@@ -38,7 +31,7 @@ export class SearchForm extends React.Component<Props, State> {
         const { cityQuery } = this.state;
         if (cityQuery) {
             this.input.current.value = '';
-            this.props.history.push(`/city/${cityQuery}`);            
+            this.props.history.push(`/city/${cityQuery}`);
         }
     }
 
@@ -53,14 +46,22 @@ export class SearchForm extends React.Component<Props, State> {
     public render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input
-                    onChange={this.handleChange}
-                    className={styles.textfield}
-                    ref={this.input}
-                    type="text"
-                    placeholder="City (e.g. London)"
-                />
-                <button className={styles.button} type="submit">Find</button>
+                <Grid alignItems="center" container spacing={3}>
+                    <Grid xs={9} item>
+                        <TextField
+                            label="Find weather forecast"
+                            placeholder="Type city/country name...(e.g. London)"
+                            onChange={this.handleChange}
+                            fullWidth
+                            inputRef={this.input}
+                        />
+                    </Grid>
+                    <Grid xs={3} item>
+                        <Button variant="outlined" color="secondary">
+                            Find
+                        </Button>
+                    </Grid>
+                </Grid>
             </form>
         );
     }

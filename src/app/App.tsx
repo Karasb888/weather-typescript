@@ -5,9 +5,9 @@ import { History } from 'history'
 import { ApplicationState } from '../store';
 import { Provider } from 'react-redux';
 import Routes from './routes/routes';
-import Container from './global/Container/Container';
 import Header from './global/Header/Header';
-import Footer from './global/Footer/Footer';
+import { Grid, Container } from '@material-ui/core';
+import Sidebar from './global/Sidebar/Sidebar';
 
 interface Props {
     readonly store: Store<ApplicationState>;
@@ -17,10 +17,16 @@ interface Props {
 const App: React.FC<Props> = ({ store, history }) => (
 <Provider store={store}>
     <ConnectedRouter history={history}>
-        <Container>
+        <Container maxWidth="lg">
             <Header />
-            <Routes />
-            <Footer />
+            <Grid container spacing={3}>
+                <Grid item xs={3}>
+                    <Sidebar />
+                </Grid>
+                <Grid item xs={9}>
+                    <Routes />
+                </Grid>
+            </Grid>
         </Container>
     </ConnectedRouter>
 </Provider>

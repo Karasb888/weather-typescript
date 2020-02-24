@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ErrorIcon from '../../icons/ErrorIcon';
 import * as styles from './Error.scss';
+import { Typography } from '@material-ui/core';
 
 interface Props {
     errorText: string;
@@ -17,9 +18,7 @@ const Error: React.FC<Props> = ({ errorText }) => {
                     svgClass="error-icon"
                 />
             </div>
-            <div className={styles.errorText}>
-                {errorText}
-            </div>
+            <Typography variant="h4" color="error" align="center">{errorText}</Typography>
         </div>
     );
 };

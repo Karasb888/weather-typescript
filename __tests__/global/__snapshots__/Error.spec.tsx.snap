@@ -14,11 +14,13 @@ exports[`++++ <Error /> ++++ Renders correctly with different props 1`] = `
       width="70"
     />
   </div>
-  <div
-    className="errorText"
+  <WithStyles(ForwardRef(Typography))
+    align="center"
+    color="error"
+    variant="h4"
   >
     First example text
-  </div>
+  </WithStyles(ForwardRef(Typography))>
 </div>
 `;
 
@@ -36,10 +38,12 @@ exports[`++++ <Error /> ++++ Renders correctly with different props 2`] = `
       width="70"
     />
   </div>
-  <div
-    className="errorText"
+  <WithStyles(ForwardRef(Typography))
+    align="center"
+    color="error"
+    variant="h4"
   >
     Second example text
-  </div>
+  </WithStyles(ForwardRef(Typography))>
 </div>
 `;

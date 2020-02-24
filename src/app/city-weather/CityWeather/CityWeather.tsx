@@ -9,9 +9,10 @@ import SmallWeatherDayCard from '../SmallWeatherDayCard/SmallWeatherDayCard';
 import * as styles from './CityWeather.scss';
 import { WindMillLoading } from 'react-loadingg';
 import Error from '../../global/Error/Error';
-import StarIcon from '../../icons/StarIcon';
+import StarIcon from '@material-ui/icons/Star';
 import { FavoriteCityObj, setFavoriteCity, removeFavoriteCity, FavoritesCityActionTypes } from '../../../store/favoritesCity';
-import RemoveIcon from '../../icons/RemoveIcon';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import { Button, Grid, Typography } from '@material-ui/core';
 
 interface State {
     cityName: string | null;
@@ -92,37 +93,29 @@ export class CityWeather extends React.Component<Props, State> {
         switch(this.props.fetchStatusWeatherCity) {
             case('success'):
                 return (
-                    <div className={styles.cityWeatherContainer}>
-                        <div className={styles.cityTitle}>
-                            Week weather forecast for {this.props.city.name}
-                            <span onClick={this.handleFavoriteCity}>
+                    <React.Fragment>
+                        <div className={styles.heading}>
+                            <Typography variant="h4">Weather forecast for - {this.props.city.name}</Typography>
+                            <Button component="a" onClick={this.handleFavoriteCity}>
                                 {
-                                    this.cityInFavotiteList() === undefined
-                                    ? <StarIcon
-                                            svgClass={styles.favoriteIcon}
-                                            title="Add to favorite cities list"
-                                            width="25"
-                                            height="25"
-                                            viewBox="0 -10 511.98685 511"
-                                        />
-                                    : <RemoveIcon
-                                            svgClass={styles.favoriteIcon}
-                                            title="Remove from favorite cities list"
-                                            width="25"
-                                            height="25"
-                                            viewBox="0 0 512 512"
-                                        />
+                                    this.cityInFavotiteList() !== undefined
+                                    ? <StarIcon titleAccess="Remove from favorite cities list" />
+                                    : <StarBorderIcon titleAccess="Add to favorite cities list"/>
                                 }
-                            </span>
+                            </Button>
                         </div>
-                        <div className={styles.cityWeather}>
-                            { this.props.weatherCity.map((dayWeatherObj) => {
-                                return (
-                                    <SmallWeatherDayCard key={dayWeatherObj.dayTimestamp} weather={dayWeatherObj} />
-                                );
-                            }) }
+                        <div>
+                            <Grid container spacing={6}>
+                                { this.props.weatherCity.map((dayWeatherObj) => {
+                                    return (
+                                        <Grid key={dayWeatherObj.dayTimestamp} item xs={6}>
+                                            <SmallWeatherDayCard weather={dayWeatherObj} />
+                                        </Grid>
+                                    );
+                                }) }
+                            </Grid>
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
             case('error'):
                 return (

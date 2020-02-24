@@ -1,5 +1,5 @@
 import { Reducer } from 'redux'
-import { FavoriteCityState, FavoritesCityActionTypes, FavoriteCityObj } from './types';
+import { FavoriteCityState, FavoritesCityActionTypes } from './types';
 import { localStorageGetters } from '../../localStorage';
 
 export const initialState: FavoriteCityState = {

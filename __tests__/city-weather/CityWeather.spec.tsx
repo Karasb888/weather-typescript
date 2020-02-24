@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import WithRouteCityWeather, { ConnectedCityWeather, CityWeather } from '../../src/app/city-weather/CityWeather/CityWeather';
+import WithRouteCityWeather from '../../src/app/city-weather/CityWeather/CityWeather';
 import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store'
 import { routerMiddleware } from 'connected-react-router';
@@ -35,7 +35,7 @@ describe('++++ <CityWeather /> ++++', () => {
                         <Route exact component={WithRouteCityWeather} path={path} />
                     </MemoryRouter>
                 </Provider>
-              ).find(WithRouteCityWeather);
+            ).find(WithRouteCityWeather);
             expect(component).toMatchSnapshot();
         });
     });

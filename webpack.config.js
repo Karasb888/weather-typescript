@@ -1,12 +1,12 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 const ADDITIONAL_PATH = process.env.GITHUB ? '/weather-typescript' : '';
 
 module.exports = {
     mode: NODE_ENV,
-
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
     entry: {
@@ -28,6 +28,12 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    },
                     {
                         loader: "ts-loader"
                     }
@@ -84,6 +90,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    optimization: {
+        minimizer: [ new TerserPlugin() ],
     },
     devServer: {
         historyApiFallback: true,

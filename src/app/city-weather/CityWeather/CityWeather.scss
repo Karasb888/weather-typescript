@@ -1,25 +1,6 @@
-.cityWeatherContainer {
-    padding: 0 100px;
-}
-
-.cityTitle {
-    font-size: 31px;
-    font-family: 'Cooper-Hewitt';
-    font-weight: 600;
-    padding: 12px 0;
-    color: #295758;
-}
-
-.cityWeather {
+.heading {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.favoriteIcon {
-    cursor: pointer;
-    padding-left: 11px;
-    vertical-align: middle;
+    align-items: center;
+    padding: 0 0 30px;
 }
