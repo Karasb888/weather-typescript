@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.53% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.53% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,65 +91,65 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { WeatherListObj, WeatherCity, City, NewWeatherDayObj, WeatherResponseObj } from "./types";
 &nbsp;
-export fu<span class="fstat-no" title="function not covered" >nction convertWeatherRe</span>sponse(weatherResponse: WeatherResponseObj): { daysWeather: WeatherCity; city: City } {
-    const newWeatherObj: {<span class="cstat-no" title="statement not covered" > [k</span>ey: string]: Array&lt;WeatherListObj&gt; } = {};
-    const city: C<span class="cstat-no" title="statement not covered" >ity = Object.assign({}, weatherResponse.</span>city);
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
-    weatherResponse.list<span class="cstat-no" title="statement not covered" >.forEach((weatherItem: WeatherLi</span>stObj) =&gt; {
-        const dateObj <span class="cstat-no" title="statement not covered" >= new Date(weatherItem.dt </span>* 1000);
-        const month <span class="cstat-no" title="statement not covered" >= dateObj.getUTCMonth</span>() + 1; //months from 1-12
-        const day = d<span class="cstat-no" title="statement not covered" >ateObj.getUTCDate();</span>
-        const year = dat<span class="cstat-no" title="statement not covered" >eObj.getUTCFullYear();</span>
-<span class="cstat-no" title="statement not covered" >        const newdate: string = year + "-" + month + "-" + day;</span>
-<span class="cstat-no" title="statement not covered" ></span>
+export function convertWeatherResponse(weatherResponse: WeatherResponseObj): { daysWeather: WeatherCity; city: City } {
+    const newWeatherObj: { [key: string]: Array&lt;WeatherListObj&gt; } = {};
+    const city: City = Object.assign({}, weatherResponse.city);
+&nbsp;
+    weatherResponse.list.forEach((weatherItem: WeatherListObj) =&gt; {
+        const dateObj = new Date(weatherItem.dt * 1000);
+        const month = dateObj.getUTCMonth() + 1; //months from 1-12
+        const day = dateObj.getUTCDate();
+        const year = dateObj.getUTCFullYear();
+        const newdate: string = year + "-" + month + "-" + day;
+&nbsp;
         if (!newWeatherObj.hasOwnProperty(newdate)) {
-<span class="cstat-no" title="statement not covered" >            newWeatherObj[newdate] = [];</span>
+            newWeatherObj[newdate] = [];
         }
-<span class="cstat-no" title="statement not covered" ></span>
-        newWeatherObj[newda<span class="cstat-no" title="statement not covered" >te].push(weatherItem);</span>
-<span class="cstat-no" title="statement not covered" >    });<span class="fstat-no" title="function not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+        newWeatherObj[newdate].push(weatherItem);
+    });
+&nbsp;
     const daysArray: WeatherCity = [];
     const daysObjectKeys = Object.keys(newWeatherObj);
     daysObjectKeys.forEach((key: string) =&gt; {
         const daysArrayItem: NewWeatherDayObj = {
-<span class="cstat-no" title="statement not covered" >            date: key,</span>
+            date: key,
             dayTimestamp: Date.parse(key),
-<span class="cstat-no" title="statement not covered" >            timeDayWeather: newWeatherObj[key</span>]
+            timeDayWeather: newWeatherObj[key]
         };
         daysArray.push(daysArrayItem);
     });
@@ -163,7 +163,7 @@ export fu<span class="fstat-no" title="function not covered" >nction convertWeat
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Feb 22 2020 13:02:08 GMT+0200 (GMT+02:00)
+                at Tue Feb 25 2020 17:37:41 GMT+0200 (Eastern European Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -100,37 +100,23 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,23 +130,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,6 +150,7 @@ import TempFeelsIcon from '../../icons/TempFeelsIcon';
 import CloudsIcon from '../../icons/CloudsIcon';
 import WindIcon from '../../icons/WindIcon';
 import * as styles from './TimeWeatherInfoTab.scss';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 &nbsp;
 interface Props {
     timeWeather: WeatherListObj;
@@ -193,40 +164,24 @@ const iconsProps = {
 &nbsp;
 const TimeWeatherInfoTab: React.FC&lt;Props&gt; = ({ timeWeather }) =&gt; {
     return (
-        &lt;div&gt;
-            &lt;div className={styles.weatherOption}&gt;
-                &lt;TempIcon
-                    {...iconsProps}
-                    viewBox="0 0 64 64"
-                /&gt;
-                &lt;div className={styles.optionName}&gt;Temperture:&lt;/div&gt;
-                &lt;div className={styles.optionValue}&gt;{timeWeather.main.temp}&lt;span className={styles.celsius}&gt;&amp;#8451;&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div className={styles.weatherOption}&gt;
-                &lt;TempFeelsIcon
-                    {...iconsProps}
-                    viewBox="0 0 64 64"
-                /&gt;
-                &lt;div className={styles.optionName}&gt;Feels temperture:&lt;/div&gt;
-                &lt;div className={styles.optionValue}&gt;{timeWeather.main.feels_like}&lt;span className={styles.celsius}&gt;&amp;#8451;&lt;/span&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div className={styles.weatherOption}&gt;
-                &lt;CloudsIcon
-                    {...iconsProps}
-                    viewBox="0 -87 463.83425 463"
-                /&gt;
-                &lt;div className={styles.optionName}&gt;Clouds:&lt;/div&gt;
-                &lt;div className={styles.optionValue}&gt;{timeWeather.clouds.all}%&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div className={styles.weatherOption}&gt;
-                &lt;WindIcon
-                    {...iconsProps}
-                    viewBox="0 0 512 512"
-                /&gt;
-                &lt;div className={styles.optionName}&gt;Wind:&lt;/div&gt;
-                &lt;div className={styles.optionValue}&gt;{timeWeather.wind.speed}m/s {timeWeather.wind.deg}deg&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;List&gt;
+            &lt;ListItem alignItems="center"&gt;
+                &lt;TempIcon {...iconsProps} viewBox="0 0 64 64" /&gt;
+                &lt;ListItemText primary="Temperture: " secondary={`${timeWeather.main.temp}℃`}/&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem alignItems="center"&gt;
+                &lt;TempFeelsIcon {...iconsProps} viewBox="0 0 64 64" /&gt;
+                &lt;ListItemText primary="Feels temperture: " secondary={`${timeWeather.main.feels_like}℃`}/&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem alignItems="center"&gt;
+                &lt;CloudsIcon {...iconsProps} viewBox="0 -87 463.83425 463" /&gt;
+                &lt;ListItemText primary="Clouds: " secondary={`${timeWeather.clouds.all}%`}/&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem alignItems="center"&gt;
+                &lt;WindIcon {...iconsProps} viewBox="0 0 512 512" /&gt;
+                &lt;ListItemText primary="Wind: " secondary={`${timeWeather.wind.speed}m/s ${timeWeather.wind.deg}deg`}/&gt;
+            &lt;/ListItem&gt;
+        &lt;/List&gt;
     );
 };
 &nbsp;
@@ -238,7 +193,7 @@ export default TimeWeatherInfoTab;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Feb 22 2020 13:02:08 GMT+0200 (GMT+02:00)
+                at Tue Feb 25 2020 17:37:41 GMT+0200 (Eastern European Standard Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

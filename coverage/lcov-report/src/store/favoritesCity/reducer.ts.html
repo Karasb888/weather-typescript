@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/store/weather/actions.ts</title>
+    <title>Code coverage report for src/store/favoritesCity/reducer.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/store/weather</a> actions.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/store/favoritesCity</a> reducer.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">54.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>6/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,47 +85,47 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dispatch } from 'redux';
-import { WeatherActionTypes } from './types'
-import axios from 'axios';
-import { apiEndPoint, apiAppKey } from '../../constants/apiInfo';
-import { convertWeatherResponse } from './helpers';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Reducer } from 'redux'
+import { FavoriteCityState, FavoritesCityActionTypes } from './types';
+import { localStorageGetters } from '../../localStorage';
 &nbsp;
-export const setCityWeatherInfo = (cityName: string) =&gt; {
-    return (dispatch: Dispatch) =&gt; {
-        const apiRequestUrl = `${apiEndPoint}?q=${cityName}&amp;appid=${apiAppKey}&amp;units=metric `;
-        dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'pending' });
-&nbsp;
-        return axios.get(apiRequestUrl)
-        .then(response =&gt; {
-            const { city, daysWeather } = convertWeatherResponse(response.data);
-            dispatch({ type: WeatherActionTypes.SET_CITY, payload: city });
-            dispatch({ type: WeatherActionTypes.SET_CITY_WEATHER, payload: daysWeather });
-            dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'success' });
-        })
-        .catch(() =&gt; {
-            dispatch({ type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'error' });
-        })
+export const initialState: FavoriteCityState = {
+    citiesList: localStorageGetters.favoriteCities()
+};
+<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
+cons<span class="cstat-no" title="statement not covered" >t reducer: Reducer&lt;FavoriteCityState&gt; = (state = initialState, action) =&gt; {</span>
+  switch (action.type) {
+    case FavoritesCityActionTypes.SET_FAVORITE_CITY: {
+      return { .<span class="cstat-no" title="statement not covered" >..state, citiesList: [...state.citiesList, action.payload] };</span>
     };
-}; 
+    case FavoritesCityActionTypes.REMOVE_FAVORITE_CITY: {
+        return { ...state, citiesList: state.citiesList.filter(city =&gt; city.id !== action.payload) }
+    };
+    default: {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+      return state
+    }
+  }
+};<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+export { reducer as favoriteCityReducer };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
