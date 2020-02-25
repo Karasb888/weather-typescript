@@ -5,9 +5,9 @@ import { Action  } from 'redux';
 import { setCityWeatherInfo, WeatherActionTypes, WeatherCity, FetchStatusType, City } from '../../../store/weather';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { ApplicationState } from '../../../store';
+import Loader from '../../global/Loader/Loader';
 import SmallWeatherDayCard from '../SmallWeatherDayCard/SmallWeatherDayCard';
 import * as styles from './CityWeather.scss';
-import { WindMillLoading } from 'react-loadingg';
 import Error from '../../global/Error/Error';
 import StarIcon from '@material-ui/icons/Star';
 import { FavoriteCityObj, setFavoriteCity, removeFavoriteCity, FavoritesCityActionTypes } from '../../../store/favoritesCity';
@@ -123,7 +123,9 @@ export class CityWeather extends React.Component<Props, State> {
                 );
             default:
                 return (
-                    <WindMillLoading />
+                    <div className={styles.loaderContainer}>
+                        <Loader />
+                    </div>
                 );
         }
     }
