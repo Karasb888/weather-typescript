@@ -1,6 +1,5 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
-const TerserPlugin = require('terser-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 const ADDITIONAL_PATH = process.env.GITHUB ? '/weather-typescript' : '';
@@ -39,7 +38,6 @@ module.exports = {
                     }
                 ]
             },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
                 enforce: "pre",
                 test: /\.js$/,
@@ -90,9 +88,6 @@ module.exports = {
                 ]
             }
         ]
-    },
-    optimization: {
-        minimizer: [ new TerserPlugin() ],
     },
     devServer: {
         historyApiFallback: true,
