@@ -8,6 +8,6 @@ export enum LocalStorageNames {
 };
 
 export interface LocalStorageAction {
-    type: LocalStorageActionTypes,
-    payload: any
+    type: LocalStorageActionTypes;
+    payload: any;
 };
