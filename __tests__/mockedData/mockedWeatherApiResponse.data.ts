@@ -1,4 +1,6 @@
-export default {
+import { WeatherResponseObj } from "../../src/store/weather";
+
+const weatherApiResponse: WeatherResponseObj = {
     "cod": 200,
     "message": 0,
     "cnt": 40,
@@ -1267,4 +1269,6 @@ export default {
         "sunrise": 1582347462,
         "sunset": 1582385140
     }
-}
+};
+
+export default weatherApiResponse;

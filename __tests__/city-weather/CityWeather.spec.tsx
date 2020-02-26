@@ -7,7 +7,7 @@ import { routerMiddleware } from 'connected-react-router';
 import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { mockedStoreKyiv } from '../mockedStoreKyiv.data';
+import { mockedStoreKyiv } from '../mockedData/mockedStoreKyiv.data';
 import { FetchStatusType } from '../../src/store/weather';
 
 let store: any;

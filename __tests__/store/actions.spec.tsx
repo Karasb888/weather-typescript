@@ -1,7 +1,7 @@
 import thunk, { ThunkDispatch } from 'redux-thunk';
-import mockedResponse from '../mockedApiResponse.data';
+import weatherApiResponse from '../mockedData/mockedWeatherApiResponse.data';
 import axios from 'axios';
-import { apiEndPoint, apiAppKey } from '../../src/constants/apiInfo';
+import { weatherApiEndPoint, weatherApiAppKey } from '../../src/constants/apiInfo';
 import  MockAdapter from 'axios-mock-adapter';
 import { WeatherActionTypes, setCityWeatherInfo } from '../../src/store/weather';
 import { convertWeatherResponse } from '../../src/store/weather/helpers';
@@ -13,8 +13,8 @@ const mockStore = createMockStore<{}, ThunkDispatch<{}, undefined, AnyAction>>(m
 const mock = new MockAdapter(axios);
 const cityName = 'Kiev';
 
-const apiRequestUrl = `${apiEndPoint}?q=${cityName}&appid=${apiAppKey}&units=metric `;
-const { city, daysWeather } = convertWeatherResponse(mockedResponse);
+const apiRequestUrl = `${weatherApiEndPoint}?q=${cityName}&appid=${weatherApiAppKey}&units=metric `;
+const { city, daysWeather } = convertWeatherResponse(weatherApiResponse);
 
 afterEach(() => {
     mock.reset();
@@ -22,7 +22,7 @@ afterEach(() => {
 
 describe('++++ ASYNC actions setCityWeatherInfo ++++', () => {
     it('creates SET_CITY, SET_CITY_WEATHER, SET_FETCH_STATUS_WEATHER_CITY when get 200 status code and data', () => {
-        mock.onGet(apiRequestUrl).reply(200, mockedResponse);
+        mock.onGet(apiRequestUrl).reply(200, weatherApiResponse);
         const expectedActions = [
             { type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'pending' },
             { type: WeatherActionTypes.SET_CITY, payload: city },
@@ -49,7 +49,7 @@ describe('++++ ASYNC actions setCityWeatherInfo ++++', () => {
         });
     });
 
-    it('creates SET_FETCH_STATUS_WEATHER_CITY on bad response (400-499)', () => {
+    it('creates SET_FETCH_STATUS_WEATHER_CITY on error response (400-499)', () => {
         const expectedActions = [
             { type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'pending' },
             { type: WeatherActionTypes.SET_FETCH_STATUS_WEATHER_CITY, payload: 'error' }
@@ -61,4 +61,4 @@ describe('++++ ASYNC actions setCityWeatherInfo ++++', () => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
-  })
+});

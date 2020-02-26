@@ -1,12 +1,18 @@
-import { WeatherState } from "../src/store/weather";
-import { FavoriteCityState } from "../src/store/favoritesCity";
+import { WeatherState } from "../../src/store/weather";
+import { FavoriteCityState } from "../../src/store/favoritesCity";
+import { UserLocationState } from "../../src/store/userLocation";
 
 export type MockStore = {
     weather: WeatherState;
     favoriteCities: FavoriteCityState;
+    userLocation: UserLocationState;
 }
 
 export const mockedStoreKyiv: MockStore = {
+    userLocation: {
+        locationInfo: null,
+        fetchStatusUserLocation: 'none'
+    },
     favoriteCities: {
         citiesList: []
     },

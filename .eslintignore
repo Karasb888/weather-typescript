@@ -1,3 +1,4 @@
 webpack*.js
 test-*.js
 jest*.js
+*.data.ts

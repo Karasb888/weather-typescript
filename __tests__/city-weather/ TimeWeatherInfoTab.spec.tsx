@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mockedStoreKyiv } from '../mockedStoreKyiv.data';
+import { mockedStoreKyiv } from '../mockedData/mockedStoreKyiv.data';
 import { shallow } from 'enzyme';
 import TimeWeatherInfoTab from '../../src/app/city-weather/TimeWeatherInfoTab/TimeWeatherInfoTab';
 

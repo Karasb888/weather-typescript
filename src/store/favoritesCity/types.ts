@@ -1,4 +1,4 @@
-export type FavoriteCityObj = {
+export interface FavoriteCityObj {
     id: number;
     name: string;
 };
