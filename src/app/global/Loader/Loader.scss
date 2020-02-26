@@ -93,6 +93,14 @@
     }
 }
 
+.small {
+    transform: scale(0.5)
+}
+
+.large {
+    transform: scale(1)
+}
+
 @keyframes lds-roller {
     0% {
         transform: rotate(0deg);

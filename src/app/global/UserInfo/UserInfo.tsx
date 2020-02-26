@@ -4,6 +4,10 @@ import { ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../../../store';
+import { Typography, ListItem, List } from '@material-ui/core';
+import Loader from '../Loader/Loader';
+import Error from '../Error/Error';
+import { Link } from 'react-router-dom';
 
 interface Props {
     setUserLocationInfo: () => void;
@@ -35,20 +39,32 @@ class UserInfo extends React.Component<Props, null> {
     }
 
     render() {
+        let content;
+
         switch(this.props.fetchStatusUserLocation) {
             case 'success':
-                return (
-                    <div>Have data</div>
-                );
+                content = <List>
+                            <ListItem button dense component={Link} to={`/city/${this.props.locationInfo.city}`}>
+                                <Typography variant="body2">Location: { `${this.props.locationInfo.city}, ${this.props.locationInfo.country}` }</Typography>
+                            </ListItem>
+                            <ListItem>
+                                <Typography variant="body2">{ this.props.locationInfo.ip }</Typography>
+                            </ListItem>
+                        </List>;
+                break;
             case 'error':
-                return (
-                    <div>error</div>
-                );
+                content =  <Error errorSize="small" errorText={`Can't detect your current location!`} />;
+                break;
             default:
-                return (
-                    <div>loading</div>
-                );
-        }
+                content = <Loader loaderSize="small" />;
+        };
+
+        return (
+            <div>
+                <Typography color="primary" variant="body1">Your info:</Typography>
+                <div>{ content }</div>
+            </div>
+        );
     }
 };
 

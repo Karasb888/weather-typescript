@@ -1,9 +1,17 @@
 import * as React from 'react';
 import * as styles from './Loader.scss';
 
-const Loader = () => {
+type LoaderSize = 'small' | 'large';
+
+interface Props {
+    loaderSize: LoaderSize;
+}
+
+const Loader: React.FC<Props> = ({ loaderSize }) => {
+    const size = styles[loaderSize];
+
     return (
-        <div className={styles.ldsRoller}>
+        <div className={[styles.ldsRoller, size].join(' ')}>
             <div></div>
             <div></div>
             <div></div>

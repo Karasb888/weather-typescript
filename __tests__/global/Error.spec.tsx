@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Error from '../../src/app/global/Error/Error';
+import Error, { Props } from '../../src/app/global/Error/Error';
 
-const exampleProps: Array<string> = ['First example text', 'Second example text'];
+const exampleProps: Array<Props> = [{errorText: 'text', errorSize: 'large'}, {errorText: 'text2222', errorSize: 'small'}];
 
 describe('++++ <Error /> ++++', () => {
-    exampleProps.forEach((errorText) => {
+    exampleProps.forEach((errorProp) => {
         it('Renders correctly with different props', () => {
-            const props = { errorText };
-            const wrapper = shallow(<Error {...props} />);
+            const wrapper = shallow(<Error {...errorProp} />);
             expect(wrapper).toMatchSnapshot();
         });
     })

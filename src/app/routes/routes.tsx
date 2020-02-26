@@ -17,7 +17,7 @@ const Routes: React.FC = () => {
                     component={CityWeather}
                 />
                 <Route
-                    component={() => <Error errorText="404 - Oh dear, this link isn't working." /> }
+                    component={() => <Error errorSize="large" errorText="404 - Oh dear, this link isn't working." /> }
                 />
             </Switch>
         </div>

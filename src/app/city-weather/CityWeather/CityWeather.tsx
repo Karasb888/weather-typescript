@@ -119,12 +119,12 @@ export class CityWeather extends React.Component<Props, State> {
                 );
             case('error'):
                 return (
-                    <Error errorText={`Cant find weather forecast for ${this.state.cityName}`} />
+                    <Error errorSize="large" errorText={`Cant find weather forecast for ${this.state.cityName}`} />
                 );
             default:
                 return (
                     <div className={styles.loaderContainer}>
-                        <Loader />
+                        <Loader loaderSize="large" />
                     </div>
                 );
         }
