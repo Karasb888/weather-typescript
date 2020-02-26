@@ -1,18 +1,18 @@
 export interface GeoIpApiResponseType {
-    status: string;
+    ip_address: string;
     country: string;
-    countryCode: string;
-    region: string;
-    regionName: string;
+    country_code: string;
+    continent: string;
+    continent_code: string;
     city: string;
-    zip: number;
-    lat: number;
-    lon: number;
+    county: string;
+    region: string;
+    region_code: string;
     timezone: string;
-    isp: string;
-    org: string;
-    as: string;
-    query: string;
+    longitude: number;
+    latitude: number;
+    currency: string;
+    languages: Array<string>;
 };
 
 export type FetchStatusType = 'success' | 'pending' | 'error' | 'none';

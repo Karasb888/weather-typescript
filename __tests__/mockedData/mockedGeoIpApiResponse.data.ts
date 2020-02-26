@@ -1,20 +1,25 @@
 import { GeoIpApiResponseType } from "../../src/store/userLocation"
 
 const geoIpApiResponse: GeoIpApiResponseType = {
-    "status": "success",
+    "ip_address": "8.8.8.8",
     "country": "United States",
-    "countryCode": "US",
-    "region": "VA",
-    "regionName": "Virginia",
-    "city": "Ashburn",
-    "zip": 20149,
-    "lat": 39.0438,
-    "lon": -77.4874,
-    "timezone": "America/New_York",
-    "isp": "Google LLC",
-    "org": "Level 3",
-    "as": "AS15169 Google LLC",
-    "query": "8.8.8.8"
+    "country_code": "US",
+    "continent": "North America",
+    "continent_code": "NA",
+    "city": "Mountain View",
+    "county": "Santa Clara County",
+    "region": "California",
+    "region_code": "CA",
+    "timezone": "America/Los_Angeles",
+    "longitude": -122.0838,
+    "latitude": 37.386,
+    "currency": "USD",
+    "languages": [
+        "en-US",
+        "es-US",
+        "haw",
+        "fr"
+    ]
 };
 
 export default geoIpApiResponse;
