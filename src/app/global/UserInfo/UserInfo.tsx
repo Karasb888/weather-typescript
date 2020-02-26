@@ -48,7 +48,7 @@ class UserInfo extends React.Component<Props, null> {
                                 <Typography variant="body2">Location: { `${this.props.locationInfo.city}, ${this.props.locationInfo.country}` }</Typography>
                             </ListItem>
                             <ListItem>
-                                <Typography variant="body2">{ this.props.locationInfo.ip }</Typography>
+                                <Typography variant="body2">IP adress: { this.props.locationInfo.ip }</Typography>
                             </ListItem>
                         </List>;
                 break;
